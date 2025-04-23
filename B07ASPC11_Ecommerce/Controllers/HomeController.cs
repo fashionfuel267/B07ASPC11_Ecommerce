@@ -1,20 +1,23 @@
 using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
 using B07ASPC11_Ecommerce.Models;
+using B07ASPC11_Ecommerce.Data;
 
 namespace B07ASPC11_Ecommerce.Controllers;
 
 public class HomeController : Controller
 {
     private readonly ILogger<HomeController> _logger;
-
-    public HomeController(ILogger<HomeController> logger)
+    private readonly ApplicationDbContext _context;
+    public HomeController(ILogger<HomeController> logger, ApplicationDbContext context)
     {
         _logger = logger;
+        this._context = context;
     }
 
     public IActionResult Index()
     {
+        ViewBag.parentCategory = _context.Categories.Where(c => c.ParentId == 0).OrderBy(a => a.Name).ToList();
         return View();
     }
 

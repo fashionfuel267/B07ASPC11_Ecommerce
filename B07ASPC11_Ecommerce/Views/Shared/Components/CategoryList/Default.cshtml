@@ -1,0 +1,79 @@
+﻿   @model IEnumerable<B07ASPC11_Ecommerce.Data.Category>
+
+<div class="header-category d-none d-lg-block">
+    <a href="#" class="cat-toggle"><i class="fas fa-bars"></i>ALL Category</a>
+    <ul class="category-menu">
+        <li class="has-dropdown">
+
+            @foreach(var item in Model)
+            {
+                <a href="#">@item.Name</a>
+                var child = Model.Where(p => p.ParentId == item.Id).ToList();
+                @child.Count
+                @if (child.Count > 0)
+                {
+                    <ul class="cat-mega-menu">
+                        @foreach (var c in child)
+                        {
+                            <li>
+                                <a href="#">@c.Name</a>
+                            </li>
+                        }
+                    </ul>
+                }
+                 
+            }
+
+                                          @*   <ul class="cat-mega-menu">
+                                                <li>
+                                                    <ul>
+                                                        <li class="dropdown-title">Accessories & Parts</li>
+                                                        <li><a href="#">Cables & Adapters</a></li>
+                                                        <li><a href="#">Batteries</a></li>
+                                                        <li><a href="#">Chargers</a></li>
+                                                        <li><a href="#">Bags & Cases</a></li>
+                                                    </ul>
+                                                    <ul>
+                                                        <li class="dropdown-title">Electronic Cigarettes</li>
+                                                        <li><a href="#">Audio & Video</a></li>
+                                                        <li><a href="#">Televisions</a></li>
+                                                        <li><a href="#">TV Receivers</a></li>
+                                                        <li><a href="#">Projectors</a></li>
+                                                        <li><a href="#">Audio Amplifier Boards</a></li>
+                                                    </ul>
+                                                </li>
+                                                <li>
+                                                    <ul>
+                                                        <li class="dropdown-title">Smart Electronics</li>
+                                                        <li><a href="#">Cables & Adapters</a></li>
+                                                        <li><a href="#">Batteries</a></li>
+                                                        <li><a href="#">Chargers</a></li>
+                                                        <li><a href="#">Bags & Cases</a></li>
+                                                    </ul>
+                                                    <ul>
+                                                        <li class="dropdown-title">Portable Audio & Video</li>
+                                                        <li><a href="#">Audio & Video</a></li>
+                                                        <li><a href="#">Televisions</a></li>
+                                                        <li><a href="#">TV Receivers</a></li>
+                                                        <li><a href="#">Projectors</a></li>
+                                                        <li><a href="#">Audio Amplifier Boards</a></li>
+                                                    </ul>
+                                                </li>
+                                                <li>
+                                                    <ul>
+                                                        <li class="dropdown-title">Accessories & Parts</li>
+                                                        <li><a href="#">Cables & Adapters</a></li>
+                                                        <li><a href="#">Batteries</a></li>
+                                                        <li><a href="#">Chargers</a></li>
+                                                        <li><a href="#">Bags & Cases</a></li>
+                                                    </ul>
+                                                    <ul>
+                                                        <li class="dropdown-title">Audio & Video</li>
+                                                        <li class="cat-mega-menu-banner"><a href="#"><img src="img/images/megamenu_banner.jpg" alt=""></a></li>
+                                                    </ul>
+                                                </li>
+                                            </ul> *@
+                                        </li>
+                                      
+                                    </ul>
+                                </div>

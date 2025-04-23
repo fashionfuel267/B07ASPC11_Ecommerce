@@ -148,11 +148,15 @@
                                     <a href="index.html" class="main-logo"><img src="img/logo/w_logo.png" alt="Logo"></a>
                                     <a href="index.html" class="sticky-logo"><img src="img/logo/logo.png" alt="Logo"></a>
                                 </div>
-                                <div class="header-category d-none d-lg-block">
+                                @await Component.InvokeAsync("CategoryList")
+
+                                @* <div class="header-category d-none d-lg-block">
                                     <a href="#" class="cat-toggle"><i class="fas fa-bars"></i>ALL DEPARTMENT</a>
                                     <ul class="category-menu">
                                         <li class="has-dropdown">
                                             <a href="#">Accessories & Parts</a>
+
+
                                             <ul class="cat-mega-menu">
                                                 <li>
                                                     <ul>
@@ -318,7 +322,7 @@
                                         <li><a href="#">Audio Amplifier Boards</a></li>
                                         <li><a href="#">TV Sticks</a></li>
                                     </ul>
-                                </div>
+                                </div> *@
                                 <div class="navbar-wrap main-menu d-none d-lg-flex">
                                     <ul class="navigation">
                                         <li class="active menu-item-has-children has--mega--menu">
@@ -600,9 +604,15 @@
     </header>
     <!-- header-area-end -->
     <div class="container">
+       @*  <div class="col-md-3">
+            @await Component.InvokeAsync("CategoryList")
+        </div>
+          <div class="col-md-9"> *@
+
         <main role="main" class="pb-3">
             @RenderBody()
         </main>
+       @*  </div> *@
     </div>
     <!-- footer-area -->
     <footer class="dark-bg pt-55 pb-80">
