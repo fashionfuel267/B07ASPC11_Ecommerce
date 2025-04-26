@@ -22,14 +22,16 @@ public class Product
     public int CatId { get; set; }
     [StringLength(20)]
     public string Name { get; set; }
+    public bool IsFeatured { get; set; }
     [StringLength(120)]
     [ValidateNever]
     public string ImagePath { get; set; }
     [NotMapped]
     [ValidateNever]
     public IFormFile Image { get; set; }
-    [MaxLength]
+    public float Price { get; set; }
     public string Description { get; set; }
+    [ValidateNever]
     public Category Category { get; set; }
 
 }
