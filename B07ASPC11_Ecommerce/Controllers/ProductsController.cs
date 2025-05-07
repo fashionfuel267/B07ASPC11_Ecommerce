@@ -24,7 +24,10 @@ namespace B07ASPC11_Ecommerce.Controllers
             var applicationDbContext = _context.Products.Include(p => p.Category);
             return View(await applicationDbContext.ToListAsync());
         }
-
+        public async Task<IActionResult> PrdDetails(int? id)
+        {
+            return View();
+        }
         // GET: Products/Details/5
         public async Task<IActionResult> Details(int? id)
         {
